@@ -1,0 +1,61 @@
+﻿@model EmployeeSamGTU.Models.Project
+
+<h1>Проект </h1>
+<h2>Имя проекта @Model.Name</h2>
+<h1>Нужные навыки</h1>
+<h1>C#</h1>
+<h2>Основы @Model.BasicCsharp</h2>
+<h2>ASP.NET @Model.AspNet</h2>
+<h2>Entity @Model.Entity</h2>
+<h1>Java</h1>
+<h2>Основы @Model.BasicJava</h2>
+<h2>Spring @Model.SpringJava</h2>
+<h2>GUI @Model.GuiJava</h2>
+<h1>JavaScript</h1>
+<h2>Основы @Model.BasicJS</h2>
+<h2>Angular @Model.Angular</h2>
+<h2>React @Model.ReactJS</h2>
+<h1>Frontend</h1>
+<h2>Html and Css @Model.HtmlAndCss</h2>
+<h2>Bootstrap @Model.Bootstrap</h2>
+<h2>Sass @Model.Sass</h2>
+<h1>Python</h1>
+<h2>Основы @Model.BasicPython</h2>
+<h2>Django @Model.Django</h2>
+<h2>Flask @Model.Flask</h2>
+
+<br>
+<br>
+<h1>Подходящие Сотрудники</h1>
+
+@if (@Model.Employees.Count() > 0)
+    {
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                       ФИО
+                    </th>
+                    <th>Цена за день</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in @Model.Employees)
+                {
+                    <tr>
+                        <td>
+                            <a asp-contrroller="Employee" asp-action="Profile" asp-route-Id="@item.Id">@item.FirstName @item.LastName</a>
+                        </td>
+                        <td>
+                            @item.Salary
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p> Нет подходящих сотрудников.</p>
+    }

@@ -1,0 +1,243 @@
+﻿@model EmployeeSamGTU.Models.Employee
+
+@{
+    ViewData["Title"] = "Создать Сотрудника";
+}
+
+<form method="post" asp-action="Create">
+    <div class="border p-3">
+        <!-- Для валидации данных использовать asp-validation-summary -->
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group row">
+            <h2 class="text-info pl-3">Создать Сотрудника</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="FirstName"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="FirstName" class="form-control" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="LastName"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Salary"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Salary" class="form-control" />
+                        <span asp-validation-for="Salary" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Experience"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Experience" class="form-control" />
+                        <span asp-validation-for="Experience" class="text-danger"></span>
+                    </div>
+                </div>
+                <h2>C#</h2>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="BasicCsharp"></label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="BasicCsharp" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                        <span asp-validation-for="BasicCsharp" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="AspNet"></label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="AspNet" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                        <span asp-validation-for="AspNet" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Entity"></label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="Entity" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                        <span asp-validation-for="Entity" class="text-danger" />
+                    </div>
+                </div>
+                <h2>Java</h2>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="BasicJava"></label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="BasicJava" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                        <span asp-validation-for="BasicJava" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="SpringJava"></label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="SpringJava" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                        <span asp-validation-for="SpringJava" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="GuiJava"></label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="GuiJava" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                        <span asp-validation-for="GuiJava" class="text-danger" />
+                    </div>
+                </div>
+                <h2>JavaScript</h2>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="BasicJS"></label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="BasicJS" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                        <span asp-validation-for="BasicJS" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="ReactJS"></label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="ReactJS" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                        <span asp-validation-for="ReactJS" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Angular"></label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="Angular" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                        <span asp-validation-for="Angular" class="text-danger" />
+                    </div>
+                </div>
+                <h2>Frontend</h2>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="HtmlAndCss"></label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="HtmlAndCss" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                        <span asp-validation-for="HtmlAndCss" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Bootstrap"></label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="Bootstrap" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                        <span asp-validation-for="Bootstrap" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Sass"></label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="Sass" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                        <span asp-validation-for="Sass" class="text-danger" />
+                    </div>
+                </div>
+                <h2>Python</h2>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="BasicPython"></label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="BasicPython" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                        <span asp-validation-for="BasicPython" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Django"></label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="Django" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                        <span asp-validation-for="Django" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Flask"></label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="Flask" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                        <span asp-validation-for="Flask" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-4 row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-info w-100" value="Создать Сотрудника" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-success w-100">
+                                Назад
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                @* Keep this empty *@
+            </div>
+        </div>
+
+    </div>
+</form>

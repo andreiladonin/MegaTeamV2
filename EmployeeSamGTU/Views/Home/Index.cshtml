@@ -1,0 +1,121 @@
+﻿@model EmployeeSamGTU.Models.Project
+
+@{
+    ViewData["Title"] = "Подбор сотрудников";
+}
+<h1>Enter the name and budget of the project</h1>
+<form method="post" asp-action="Search">
+        <ul class="project-char__item">
+            <li class="project-char__item-char">
+                <p>
+                    <b>project name</b>
+                    <input asp-for="Name" class="project-char__choise" placeholder="name of the project" />
+                </p>
+            </li>
+            <li class="project-char__item-char">
+                <p>
+                <b>budget in rubles</b>
+                    <input asp-for="Budget" class="project-char__choise" placeholder="budget"/>
+                </p>
+            </li>
+        </ul>
+        <h2>desired employee skills</h2>
+        <h3>C#</h3>
+        <ul class="project-char__item">
+          <li class="project-char__item-char">
+              <label asp-for="BasicCsharp"></label>
+                <select class="project-char__choise" asp-for="BasicCsharp" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+              </select>
+          </li>
+          <li class="project-char__item-char">
+            <label asp-for="AspNet"></label>
+            <select class="project-char__choise" asp-for="AspNet" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+            </select>
+          </li>
+          <li class="project-char__item-char">
+            <label asp-for="Entity"></label>
+            <select class="project-char__choise" asp-for="Entity" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+            </select>
+          </li>
+        </ul>
+
+        <h3>Java</h3>
+        <ul class="project-char__item">
+            <li class="project-char__item-char">
+                <label asp-for="BasicJava"></label>
+                <select class="project-char__choise" asp-for="BasicJava" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                </select>
+            </li>
+            <li class="project-char__item-char">
+                <label asp-for="SpringJava"></label>
+                <select class="project-char__choise" asp-for="SpringJava" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                </select>
+            </li>
+            <li class="project-char__item-char">
+                <label asp-for="GuiJava"></label>
+                <select class="project-char__choise" asp-for="GuiJava" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                </select>
+            </li>
+        </ul>
+
+        <h3>Java Script</h3>
+        <ul class="project-char__item">
+            <li class="project-char__item-char">
+                <label asp-for="BasicJS"></label>
+                <select class="project-char__choise" asp-for="BasicJava" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                </select>
+            </li>
+            <li class="project-char__item-char">
+                <label asp-for="ReactJS"></label>
+                <select class="project-char__choise" asp-for="SpringJava" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                </select>
+            </li>
+            <li class="project-char__item-char">
+                <label asp-for="Angular"></label>
+                <select class="project-char__choise" asp-for="Angular" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                </select>
+            </li>
+        </ul>
+        <h3>Front-end</h3>
+        <ul class="project-char__item">
+            <li class="project-char__item-char">
+                <label asp-for="HtmlAndCss"></label>
+                <select class="project-char__choise" asp-for="HtmlAndCss" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                </select>
+            </li>
+            <li class="project-char__item-char">
+                <label asp-for="Bootstrap"></label>
+                <select class="project-char__choise" asp-for="Bootstrap" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                </select>
+            </li>
+            <li class="project-char__item-char">
+                <label asp-for="Sass"></label>
+                <select class="project-char__choise" asp-for="Sass" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                </select>
+            </li>
+        </ul>
+        <h3>Python</h3>
+        <ul class="project-char__item">
+            <li class="project-char__item-char">
+                <label asp-for="BasicPython"></label>
+                <select class="project-char__choise" asp-for="BasicPython" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                </select>
+            </li>
+            <li class="project-char__item-char">
+                <label asp-for="Django"></label>
+                <select class="project-char__choise" asp-for="Django" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                </select>
+            </li>
+            <li class="project-char__item-char">
+                <label asp-for="Flask"></label>
+                <select class="project-char__choise" asp-for="Flask" asp-items="Html.GetEnumSelectList<ProficiencyLevel>()">
+                </select>
+            </li>
+        </ul>
+
+        <ul class="project-char__item">
+            <li class="project-char__item-char">
+                <input type="submit" value="Search"/>
+            </li>
+        </ul>
+</form>

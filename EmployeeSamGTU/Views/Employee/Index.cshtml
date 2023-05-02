@@ -1,0 +1,58 @@
+﻿@model List<Employee>
+
+
+@{
+    ViewData["Title"] = "Сотрудники";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Сотрудники</h2>
+        </div>
+        <div class="col-6">
+            <a asp-action="Create" class="btn btn-primary text-center">
+               Создать Сотрудника 
+            </a>
+        </div>
+    </div>
+
+    <br />
+    <br />
+
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                       ФИО
+                    </th>
+                    <th>Удалить</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a asp-action="Profile" asp-route-Id="@item.Id">@item.FirstName @item.LastName</a>
+                        </td>
+                        <td class="text-center">
+                            <div class="w-75 btn-group" role="group">
+                                <form method="post">
+                                    <input type="submit" value="Delete" asp-action="Delete" asp-route-Id="@item.Id" class="btn btn-danger text-center"/>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p> No product exists.</p>
+    }
+</div>

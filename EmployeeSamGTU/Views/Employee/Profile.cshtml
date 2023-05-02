@@ -1,0 +1,95 @@
+﻿@model EmployeeSamGTU.Models.Employee
+
+@{
+    ViewData["Title"] = Model.FirstName + " " + Model.LastName;
+}
+
+<h1>@Model.LastName @Model.LastName</h1>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th>Цена</th>
+            <td>@Model.Salary</td>
+        </tr>
+        <tr>
+            <th>Опыт</th>
+            <td>@Model.Experience</td>
+        </tr>
+        <tr>
+            <th colspan="2">C#</th>
+        </tr>
+        <tr>
+            <th>Основы C#</th>
+            <td>@Model.BasicCsharp</td>
+        </tr>
+        <tr>
+            <th>ASP.NET</th>
+            <td>@Model.AspNet</td>
+        </tr>
+        <tr>
+            <th>EF Core</th>
+            <td>@Model.Entity</td>
+        </tr>
+        <tr>
+            <th colspan="2">Java</th>
+        </tr>
+        <tr>
+            <th>Основы Java</th>
+            <td>@Model.BasicJava</td>
+        </tr>
+        <tr>
+            <th>SpringBoot</th>
+            <td>@Model.SpringJava</td>
+        </tr>
+        <tr>
+            <th>GUI Java</th>
+            <td>@Model.GuiJava</td>
+        </tr>
+        <tr>
+            <th colspan="2">JavaScript</th>
+        </tr>
+        <tr>
+            <th>Основы JavaScript</th>
+            <td>@Model.BasicJS</td>
+        </tr>
+        <tr>
+            <th>React</th>
+            <td>@Model.ReactJS</td>
+        </tr>
+        <tr>
+            <th>Angular</th>
+            <td>@Model.Angular</td>
+        </tr>
+        <tr>
+            <th colspan="2">Fontend</th>
+        </tr>
+        <tr>
+            <th>Основы HTML/CSS</th>
+            <td>@Model.HtmlAndCss</td>
+        </tr>
+        <tr>
+            <th>Bootstrap</th>
+            <td>@Model.Bootstrap</td>
+        </tr>
+        <tr>
+            <th>Sass</th>
+            <td>@Model.Sass</td>
+        </tr>
+        <tr>
+            <th colspan="2">Python</th>
+        </tr>
+        <tr>
+            <th>Основы Python</th>
+            <td>@Model.BasicPython</td>
+        </tr>
+        <tr>
+            <th>Django</th>
+            <td>@Model.Django</td>
+        </tr>
+        <tr>
+            <th>Основы Flask</th>
+            <td>@Model.Flask</td>
+        </tr>
+    </tbody>
+</table>
